@@ -1,0 +1,8 @@
+package ua.javarush.java.core.level17.task10;
+
+public class Car extends Vehicle{
+    public Car(String carBrand, int manufacturingYear){
+        super(carBrand);
+        System.out.println(String.format("Автомобіль %s, рік: %d", carBrand, manufacturingYear));
+    }
+}
