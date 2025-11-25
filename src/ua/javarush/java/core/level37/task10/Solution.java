@@ -15,9 +15,20 @@ public class Solution {
         String outputDataPath = "output_utf8.txt";
 
         // Явно задаємо вихідне та цільове кодування
-
-
         // try-with-resources гарантує закриття файлів навіть у разі помилок
+        try (var read = Files.newBufferedReader(Path.of(inputDataPath), StandardCharsets.ISO_8859_1);
+             var out = Files.newBufferedWriter(Path.of(outputDataPath), StandardCharsets.UTF_8)) {
+            String s;
+            while((s = read.readLine()) != null){
+                out.write(s);
+                out.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Помилка під час перекодування файлу");
+        }
+
+
+
 
     }
 }
