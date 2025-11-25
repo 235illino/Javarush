@@ -1,0 +1,8 @@
+package ua.javarush.java.core.level18.task15;
+
+public class Tester extends Employee{
+    @Override
+    public void work() {
+        System.out.println("Тестувальник шукає баги.");
+    }
+}
